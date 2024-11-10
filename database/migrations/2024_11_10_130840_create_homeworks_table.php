@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('homeworks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('group_id')->constrained('groups');
+            $table->string('title');
+            $table->text('description');
+            $table->date('due_date');
             $table->timestamps();
         });
+
     }
 
     /**

@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('group_id')->constrained('groups');
+            $table->string('title');
+            $table->string('url');
             $table->timestamps();
         });
+
     }
 
     /**
